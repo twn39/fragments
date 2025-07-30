@@ -1,5 +1,5 @@
 import './globals.css'
-import { PostHogProvider, ThemeProvider } from './providers'
+import { ThemeProvider } from './providers'
 import { Toaster } from '@/components/ui/toaster'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
@@ -19,7 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <PostHogProvider>
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
@@ -32,7 +31,6 @@ export default function RootLayout({
           <Toaster />
           <Analytics />
         </body>
-      </PostHogProvider>
     </html>
   )
 }

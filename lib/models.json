@@ -20,13 +20,6 @@
       "providerId": "deepseek",
       "name": "DeepSeek V3",
       "multiModal": false
-    },
-    {
-      "id": "mistral-large",
-      "provider": "Ollama",
-      "providerId": "ollama",
-      "name": "Mistral Large",
-      "multiModal": false
     }
   ]
 }

@@ -18,7 +18,6 @@ import templates, { TemplateId } from '@/lib/templates'
 import { ExecutionResult } from '@/lib/types'
 import { DeepPartial } from 'ai'
 import { experimental_useObject as useObject } from 'ai/react'
-import { usePostHog } from 'posthog-js/react'
 import { SetStateAction, useEffect, useState } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -35,7 +34,6 @@ export default function Home() {
     },
   )
 
-  const posthog = usePostHog()
 
   const [result, setResult] = useState<ExecutionResult>()
   const [messages, setMessages] = useState<Message[]>([])
@@ -80,9 +78,6 @@ export default function Home() {
         // send it to /api/sandbox
         console.log('fragment', fragment)
         setIsPreviewLoading(true)
-        posthog.capture('fragment_generated', {
-          template: fragment?.template,
-        })
 
         const response = await fetch('/api/sandbox', {
           method: 'POST',
@@ -96,7 +91,6 @@ export default function Home() {
 
         const result = await response.json()
         console.log('result', result)
-        posthog.capture('sandbox_created', { url: result.url })
 
         setResult(result)
         setCurrentPreview({ fragment, result })
@@ -186,10 +180,6 @@ export default function Home() {
     setFiles([])
     setCurrentTab('code')
 
-    posthog.capture('chat_submit', {
-      template: selectedTemplate,
-      model: languageModel.model,
-    })
   }
 
   function retry() {
@@ -235,7 +225,6 @@ export default function Home() {
       window.open('https://discord.gg/U7KEcGErtQ', '_blank')
     }
 
-    posthog.capture(`${target}_click`)
   }
 
   function handleClearChat() {
