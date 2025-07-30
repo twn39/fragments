@@ -216,16 +216,6 @@ export default function Home() {
     setLanguageModel({ ...languageModel, ...e })
   }
 
-  function handleSocialClick(target: 'github' | 'x' | 'discord') {
-    if (target === 'github') {
-      window.open('https://github.com/e2b-dev/fragments', '_blank')
-    } else if (target === 'x') {
-      window.open('https://x.com/e2b_dev', '_blank')
-    } else if (target === 'discord') {
-      window.open('https://discord.gg/U7KEcGErtQ', '_blank')
-    }
-
-  }
 
   function handleClearChat() {
     stop()
@@ -269,7 +259,6 @@ export default function Home() {
             session={session}
             showLogin={() => setAuthDialog(true)}
             signOut={logout}
-            onSocialClick={handleSocialClick}
             onClear={handleClearChat}
             canClear={messages.length > 0}
             canUndo={messages.length > 1 && !isLoading}
