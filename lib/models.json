@@ -8,6 +8,34 @@
       "multiModal": true
     },
     {
+      "id": "openai/gpt-4.1-mini",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "GPT 4.1 mini",
+      "multiModal": true
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "GPT 4o mini",
+      "multiModal": true
+    },
+    {
+      "id": "mistralai/mistral-medium-3",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "Mistral Medium 3",
+      "multiModal": true
+    },
+    {
+      "id": "anthropic/claude-3.7-sonnet",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "Claude 3.7 Sonnet",
+      "multiModal": true
+    },
+    {
       "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "provider": "ModelScope",
       "providerId": "modelscope",
