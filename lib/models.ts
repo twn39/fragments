@@ -1,7 +1,5 @@
-import { createAnthropic } from '@ai-sdk/anthropic'
 import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { createVertex } from '@ai-sdk/google-vertex'
-import { createMistral } from '@ai-sdk/mistral'
 import { createOpenAI } from '@ai-sdk/openai'
 
 export type LLMModel = {
@@ -28,11 +26,9 @@ export function getModelClient(model: LLMModel, config: LLMModelConfig) {
   const { apiKey, baseURL } = config
 
   const providerConfigs = {
-    anthropic: () => createAnthropic({ apiKey, baseURL })(modelNameString),
     openai: () => createOpenAI({ apiKey, baseURL })(modelNameString),
     google: () =>
       createGoogleGenerativeAI({ apiKey, baseURL })(modelNameString),
-    mistral: () => createMistral({ apiKey, baseURL })(modelNameString),
     vertex: () =>
       createVertex({
         googleAuthOptions: {

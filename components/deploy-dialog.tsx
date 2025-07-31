@@ -18,7 +18,6 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
 import { Duration } from '@/lib/duration'
-import { usePostHog } from 'posthog-js/react'
 import { useEffect, useState } from 'react'
 
 export function DeployDialog({
@@ -32,7 +31,6 @@ export function DeployDialog({
   teamID: string | undefined
   accessToken: string | undefined
 }) {
-  const posthog = usePostHog()
 
   const [publishedURL, setPublishedURL] = useState<string | null>(null)
   const [duration, setDuration] = useState<string | null>(null)
@@ -51,9 +49,6 @@ export function DeployDialog({
       accessToken,
     )
     setPublishedURL(publishedURL)
-    posthog.capture('publish_url', {
-      url: publishedURL,
-    })
   }
 
   return (
