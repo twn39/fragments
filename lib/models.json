@@ -22,6 +22,20 @@
       "multiModal": true
     },
     {
+      "id": "google/gemini-2.5-pro",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "Gemini 2.5 Pro",
+      "multiModal": true
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "Gemini 2.5 flash",
+      "multiModal": true
+    },
+    {
       "id": "mistralai/mistral-medium-3",
       "provider": "OpenRouter",
       "providerId": "openrouter",
@@ -43,18 +57,32 @@
       "multiModal": false
     },
     {
-      "id": "google/gemini-2.5-pro",
-      "provider": "OpenRouter",
-      "providerId": "openrouter",
-      "name": "Gemini 2.5 Pro",
-      "multiModal": true
+      "id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "provider": "ModelScope",
+      "providerId": "modelscope",
+      "name": "Qwen3-235B-A22B-Instruct-2507",
+      "multiModal": false
     },
     {
-      "id": "google/gemini-2.5-flash",
-      "provider": "OpenRouter",
-      "providerId": "openrouter",
-      "name": "Gemini 2.5 flash",
-      "multiModal": true
+      "id": "ZhipuAI/GLM-4.5",
+      "provider": "ModelScope",
+      "providerId": "modelscope",
+      "name": "GLM 4.5",
+      "multiModal": false
+    },
+    {
+      "id": "moonshotai/Kimi-K2-Instruct",
+      "provider": "ModelScope",
+      "providerId": "modelscope",
+      "name": "Kimi-K2",
+      "multiModal": false
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-R1-0528",
+      "provider": "ModelScope",
+      "providerId": "modelscope",
+      "name": "DeepSeek R1 0528",
+      "multiModal": false
     },
     {
       "id": "deepseek-chat",
