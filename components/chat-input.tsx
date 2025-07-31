@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { isFileInArray } from '@/lib/utils'
-import { ArrowUp, Paperclip, Square, X, ImagePlus } from 'lucide-react'
+import { ArrowUp, Square, X, ImagePlus } from 'lucide-react'
 import { SetStateAction, useEffect, useMemo, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
@@ -41,6 +41,11 @@ export function ChatInput({
   handleFileChange: (change: SetStateAction<File[]>) => void
   children: React.ReactNode
 }) {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   function handleFileInput(e: React.ChangeEvent<HTMLInputElement>) {
     handleFileChange((prev) => {
       const newFiles = Array.from(e.target.files || [])
@@ -207,7 +212,7 @@ export function ChatInput({
                 <Tooltip delayDuration={0}>
                   <TooltipTrigger asChild>
                     <Button
-                      disabled={!isMultiModal || isErrored}
+                      disabled={!isClient || !isMultiModal || isErrored}
                       type="button"
                       variant="outline"
                       size="icon"

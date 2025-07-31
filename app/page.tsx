@@ -75,8 +75,6 @@ export default function Home() {
     },
     onFinish: async ({ object: fragment, error }) => {
       if (!error) {
-        // send it to /api/sandbox
-        console.log('fragment', fragment)
         setIsPreviewLoading(true)
 
         const response = await fetch('/api/sandbox', {
