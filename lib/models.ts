@@ -3,8 +3,6 @@ import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { createVertex } from '@ai-sdk/google-vertex'
 import { createMistral } from '@ai-sdk/mistral'
 import { createOpenAI } from '@ai-sdk/openai'
-import { createOllama } from 'ollama-ai-provider'
-import { createFireworks } from '@ai-sdk/fireworks'
 
 export type LLMModel = {
   id: string

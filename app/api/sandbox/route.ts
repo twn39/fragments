@@ -18,9 +18,6 @@ export async function POST(req: Request) {
     teamID: string | undefined
     accessToken: string | undefined
   } = await req.json()
-  console.log('fragment', fragment)
-  console.log('userID', userID)
-  // console.log('apiKey', apiKey)
 
   // Create an interpreter or a sandbox
   const sbx = await Sandbox.create(fragment.template, {
