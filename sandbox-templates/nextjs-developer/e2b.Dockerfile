@@ -12,9 +12,11 @@ WORKDIR /home/user/nextjs-app
 
 RUN npx create-next-app@14.2.31 . --ts --tailwind --no-eslint --import-alias "@/*" --use-npm --no-app --no-src-dir
 COPY _app.tsx pages/_app.tsx
+COPY next.config.mjs ./
 
 RUN npx shadcn@2.9.2 init -d
 RUN npx shadcn@2.9.2 add --all
+RUN npm install lucide-react -y
 
 # Move the Nextjs app to the home directory and remove the nextjs-app directory
 RUN mv /home/user/nextjs-app/* /home/user/ && rm -rf /home/user/nextjs-app

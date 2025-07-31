@@ -30,7 +30,7 @@ export default function Home() {
   const [languageModel, setLanguageModel] = useLocalStorage<LLMModelConfig>(
     'languageModel',
     {
-      model: 'claude-3-5-sonnet-latest',
+      model: 'openai/gpt-4.1',
     },
   )
 
@@ -46,14 +46,7 @@ export default function Home() {
   const [errorMessage, setErrorMessage] = useState('')
   const { session, userTeam } = useAuth(setAuthDialog, setAuthView)
 
-  const filteredModels = modelsList.models.filter((model) => {
-    if (process.env.NEXT_PUBLIC_HIDE_LOCAL_MODELS) {
-      return model.providerId !== 'ollama'
-    }
-    return true
-  })
-
-  const currentModel = filteredModels.find(
+  const currentModel = modelsList.models.find(
     (model) => model.id === languageModel.model,
   )
   const currentTemplate =
@@ -285,7 +278,7 @@ export default function Home() {
               templates={templates}
               selectedTemplate={selectedTemplate}
               onSelectedTemplateChange={setSelectedTemplate}
-              models={filteredModels}
+              models={modelsList.models}
               languageModel={languageModel}
               onLanguageModelChange={handleLanguageModelChange}
             />
