@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { isFileInArray } from '@/lib/utils'
-import { ArrowUp, Paperclip, Square, X } from 'lucide-react'
+import { ArrowUp, Paperclip, Square, X, ImagePlus } from 'lucide-react'
 import { SetStateAction, useEffect, useMemo, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 
@@ -217,7 +217,7 @@ export function ChatInput({
                         document.getElementById('multimodal')?.click()
                       }}
                     >
-                      <Paperclip className="h-5 w-5" />
+                      <ImagePlus className="h-5 w-5" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>Add attachments</TooltipContent>

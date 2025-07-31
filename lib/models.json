@@ -1,6 +1,13 @@
 {
   "models": [
     {
+      "id": "openai/gpt-4.1",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "GPT 4.1",
+      "multiModal": true
+    },
+    {
       "id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "provider": "ModelScope",
       "providerId": "modelscope",
@@ -12,6 +19,13 @@
       "provider": "OpenRouter",
       "providerId": "openrouter",
       "name": "Gemini 2.5 Pro",
+      "multiModal": true
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "provider": "OpenRouter",
+      "providerId": "openrouter",
+      "name": "Gemini 2.5 flash",
       "multiModal": true
     },
     {
