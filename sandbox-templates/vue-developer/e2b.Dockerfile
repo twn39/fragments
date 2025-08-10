@@ -6,6 +6,7 @@ WORKDIR /home/user/vue-app
 
 RUN npx nuxi@latest init . --packageManager=npm --gitInit=no -f
 RUN npx nuxi@latest module add tailwindcss
+RUN npx nuxi@latest module add lucide-icons
 COPY nuxt.config.ts /home/user/vue-app/nuxt.config.ts
 
 # Move the Vue app to the home directory and remove the Vue directory
