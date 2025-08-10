@@ -22,6 +22,8 @@ COPY --from=builder --chown=nextjs:nextjs /app/.next/ ./.next/
 COPY --from=builder --chown=nextjs:nextjs /app/public ./public
 COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.mjs ./
 
+RUN npm install --prod
+
 EXPOSE 3000
 
 ENV NODE_ENV=production
