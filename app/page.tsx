@@ -25,7 +25,7 @@ export default function Home() {
   const [chatInput, setChatInput] = useLocalStorage('chat', '')
   const [files, setFiles] = useState<File[]>([])
   const [selectedTemplate, setSelectedTemplate] = useState<'auto' | TemplateId>(
-    'auto',
+    'nextjs-developer',
   )
   const [languageModel, setLanguageModel] = useLocalStorage<LLMModelConfig>(
     'languageModel',
