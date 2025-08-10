@@ -20,7 +20,7 @@ USER nextjs
 
 COPY --from=builder --chown=nextjs:nextjs /app/.next/ ./.next/
 COPY --from=builder --chown=nextjs:nextjs /app/public ./public
-COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.js ./
+COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.mjs ./
 
 EXPOSE 3000
 
